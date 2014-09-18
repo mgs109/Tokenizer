@@ -1,0 +1,142 @@
+Michael Sabbagh
+Tokenizer Test Cases
+
+
+1. cmd input: too may args (args>=3)
+   output: 
+Incorrect number of arguments, please try again.
+Format of inputs should be: <delimiters> <stringoftokens>.
+
+
+2. cmd input: too few args (args<2)
+   output: 
+Incorrect number of arguments, please try again.
+Format of inputs should be: <delimiters> <stringoftokens>.
+
+
+3. cmd input: "" ""
+   you get: "" ""
+   output:
+Please input a string to be tokenized
+
+
+4. cmd input: "k" ""
+   you get: "k" ""
+   output:
+Please input a string to be tokenized
+
+
+5. cmd input: "E" "helloEworld"
+   you get: "E" "helloEworld"
+   output:
+hello
+world
+
+
+6. cmd input: " " "today is a nice day"
+   you get: " " "today is a nice day"
+   output: 
+today 
+is 
+a 
+nice 
+day
+
+
+7. cmd input:  "/?" "/usr/local?/bin? share"
+   you get: "/?" "/usr/local?/bin? share"
+   output:
+usr
+local
+bin
+ share
+
+
+8. cmd input: “\n” “hello\nworld”
+   you get: “\n” “hello\nworld”
+   output: 
+hello	
+world
+
+
+9. cmd input: “m” “mmmmm”
+   you get: “m” “mmmmm”
+   output:
+
+
+10. cmd input: “e\v\t ” “hel\vlo \tworld”
+    you get: “e\v\t ” “hel\vlo \tworld”
+    output: 
+h
+l
+lo
+world
+
+
+11. cmd input: “” “You have to print out hex of \a”
+    you get: “” “You have to print out hex of \a”
+    output: 
+You have to print out hex of [0x07]
+
+
+12. cmd input: "" "hello\nworld"
+    you get: "" "hello\nworld"
+    output:
+hello[0x0a]world
+
+
+13. cmd input: “\n” “”
+    you get: “\n” “”
+    output:
+
+
+14. cmd input: “\k” “hello\kworld”
+    you get: “\k” “hello\kworld”
+    output: 
+hello
+world
+
+
+15. cmd input: “\\\\” “\\\\\\hello\\\\\\world\\\\”
+    you get: “\\” “\\\hello\\\world\\”
+    output: 
+hello
+world
+
+16. cmd input: "D" "helloDworld\\"
+    you get: "D" "helloDworld\"
+    output:
+hello 
+world
+
+
+
+17. cmd input: “\t\\” “hello\tworld”
+    you get: “\t\” “hello\tworld”
+    output: 
+hello
+world
+
+
+18. cmd input: “” “\\\””
+    you get: “” “\””
+    output: 
+[0x22]
+
+
+19. cmd input: " -/" "this-is/ a- test"
+    you get: " -/" "this-is/ a- test"
+    output:
+this
+is
+a
+test
+
+
+20. cmd input: "" "one\tmore\ntest\a"
+    you get: "" "one\tmore\ntest\a"
+    output:
+one[0x09]more[0x0a]test[0x07]
+
+
+
